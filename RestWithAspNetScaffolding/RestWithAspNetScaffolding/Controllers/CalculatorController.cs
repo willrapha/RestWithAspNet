@@ -10,7 +10,7 @@ namespace RestWithAspNetScaffolding.Controllers
     public class CalculatorController : Controller
     {
         // GET api/values
-        [HttpGet("{firstNumber}/{secondNumber}")]
+        [HttpGet("sum/{firstNumber}/{secondNumber}")]
         public IActionResult Sum(string firstNumber, string secondNumber)
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
@@ -18,6 +18,19 @@ namespace RestWithAspNetScaffolding.Controllers
                 var sum = ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber);
 
                 return Ok(sum.ToString());
+            }
+
+            return BadRequest("Invalid Input");
+        }
+
+        [HttpGet("sub/{firstNumber}/{secondNumber}")]
+        public IActionResult Subtraction(string firstNumber, string secondNumber)
+        {
+            if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
+            {
+                var sub = ConvertToDecimal(firstNumber) - ConvertToDecimal(secondNumber);
+
+                return Ok(sub.ToString());
             }
 
             return BadRequest("Invalid Input");
