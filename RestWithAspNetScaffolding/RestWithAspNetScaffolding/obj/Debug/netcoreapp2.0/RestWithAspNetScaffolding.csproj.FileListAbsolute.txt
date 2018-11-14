@@ -1,0 +1,11 @@
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\obj\Debug\netcoreapp2.0\RestWithAspNetScaffolding.csprojResolveAssemblyReference.cache
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\obj\Debug\netcoreapp2.0\RestWithAspNetScaffolding.csproj.CoreCompileInputs.cache
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\obj\Debug\netcoreapp2.0\RestWithAspNetScaffolding.AssemblyInfoInputs.cache
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\obj\Debug\netcoreapp2.0\RestWithAspNetScaffolding.AssemblyInfo.cs
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\bin\Debug\netcoreapp2.0\RestWithAspNetScaffolding.deps.json
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\bin\Debug\netcoreapp2.0\RestWithAspNetScaffolding.runtimeconfig.json
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\bin\Debug\netcoreapp2.0\RestWithAspNetScaffolding.runtimeconfig.dev.json
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\bin\Debug\netcoreapp2.0\RestWithAspNetScaffolding.dll
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\bin\Debug\netcoreapp2.0\RestWithAspNetScaffolding.pdb
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\obj\Debug\netcoreapp2.0\RestWithAspNetScaffolding.dll
+C:\Users\Willian Raphael\source\repos\ProjetoRest\RestWithAspNet\RestWithAspNetScaffolding\RestWithAspNetScaffolding\obj\Debug\netcoreapp2.0\RestWithAspNetScaffolding.pdb
