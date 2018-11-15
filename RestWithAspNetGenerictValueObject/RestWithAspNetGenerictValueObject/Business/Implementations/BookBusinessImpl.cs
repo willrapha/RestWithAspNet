@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using RestWithAspNetGenerictValueObject.Data.Converters;
+using RestWithAspNetGenerictValueObject.Data.VO;
 using RestWithAspNetGenerictValueObject.Model;
 using RestWithAspNetGenerictValueObject.Repository.Generic;
 
@@ -7,32 +9,38 @@ namespace RestWithAspNetGenerictValueObject.Business.Implementations
     public class BookBusinessImpl : IBookBusiness
     {
         private readonly IRepository<Book> _repository;
+        private readonly BookConverter _converter;
 
         public BookBusinessImpl(IRepository<Book> repository)
         {
             _repository = repository;
+            _converter = new BookConverter();
         }
 
-        public Book Create(Book book)
+        public BookVO Create(BookVO book)
         {
             //Regras de negocio
 
-            return _repository.Create(book);
+            var bookEntity = _converter.Parse(book);
+            _repository.Create(bookEntity);
+            return _converter.Parse(bookEntity);
         }
 
-        public Book FindById(long id)
+        public BookVO FindById(long id)
         {
-            return _repository.FindById(id);
+            return _converter.Parse(_repository.FindById(id));
         }
 
-        public List<Book> FindAll()
+        public List<BookVO> FindAll()
         {
-            return _repository.FindAll();
+            return _converter.ParseList(_repository.FindAll());
         }
 
-        public Book Update(Book book)
+        public BookVO Update(BookVO book)
         {
-            return _repository.Update(book);
+            var bookEntity = _converter.Parse(book);
+            _repository.Update(bookEntity);
+            return _converter.Parse(bookEntity);
         }
 
         public void Delete(long id)

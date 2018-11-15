@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RestWithAspNetGenerictValueObject.Business;
+using RestWithAspNetGenerictValueObject.Data.VO;
 using RestWithAspNetGenerictValueObject.Model;
 
-namespace RestWithAspNetGenerictRepository.Controllers
+namespace RestWithAspNetGenerictValueObject.Controllers
 {
     /* Mapeia as requisições de http://localhost:{porta}/api/person/
    Por padrão o ASP.NET Core mapeia todas as classes que extendem Controller
@@ -44,7 +45,7 @@ namespace RestWithAspNetGenerictRepository.Controllers
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody]Person person)
+        public IActionResult Post([FromBody]PersonVO person)
         {
             if (person == null) return BadRequest();
             return new ObjectResult(_personBusiness.Create(person));
@@ -52,7 +53,7 @@ namespace RestWithAspNetGenerictRepository.Controllers
 
         // PUT api/values/5
         [HttpPut]
-        public IActionResult Put([FromBody]Person person)
+        public IActionResult Put([FromBody]PersonVO person)
         {
             if (person == null) return BadRequest();
 

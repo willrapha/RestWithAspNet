@@ -65,7 +65,8 @@ namespace RestWithAspNetGenerictValueObject
             services.AddScoped<IPersonBusiness, PersonBusinessImpl>();
             services.AddScoped<IBookBusiness, BookBusinessImpl>();
 
-            services.AddScoped<IPersonRepository, PersonRepositoryImpl>();
+            // Não precisamos mais fazer dessa forma
+            //services.AddScoped<IPersonRepository, PersonRepositoryImpl>();
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>)); // Injeção de dependencia para genericos
         }
 

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RestWithAspNetGenerictValueObject.Business;
-using RestWithAspNetGenerictValueObject.Model;
+using RestWithAspNetGenerictValueObject.Data.VO;
 
-namespace RestWithAspNetGenerictRepository.Controllers
+namespace RestWithAspNetGenerictValueObject.Controllers
 {
     [ApiVersion("1")]
     [Route("api/v{version:apiVersion}/[controller]")]
@@ -35,7 +31,7 @@ namespace RestWithAspNetGenerictRepository.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Book book)
+        public IActionResult Post([FromBody]BookVO book)
         {
             if (book == null) return BadRequest();
 
@@ -43,7 +39,7 @@ namespace RestWithAspNetGenerictRepository.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody]Book book)
+        public IActionResult Put([FromBody]BookVO book)
         {
             if (book == null) return BadRequest();
 
