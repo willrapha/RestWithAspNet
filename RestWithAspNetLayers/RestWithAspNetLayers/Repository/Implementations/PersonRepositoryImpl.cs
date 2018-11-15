@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using RestWithAspNetLayers.Model;
 using RestWithAspNetLayers.Model.Context;
-using RestWithAspNetLayers.Services.Implementations;
 
-namespace RestWithAspNetLayers.Services
+namespace RestWithAspNetLayers.Repository.Implementations
 {
-    public class PersonServiceImpl : IPersonService
+    public class PersonRepositoryImpl : IPersonRepository
     {
+        private readonly MySqlContext _context;
 
-        private MySqlContext _context;
-
-        public PersonServiceImpl(MySqlContext context)
+        public PersonRepositoryImpl(MySqlContext context)
         {
             _context = context;
         }
@@ -80,7 +78,7 @@ namespace RestWithAspNetLayers.Services
             }
         }
 
-        private bool Exist(long? id)
+        public bool Exist(long? id)
         {
             //Busca se existe
             return _context.Persons.Any(p => p.Id.Equals(id));

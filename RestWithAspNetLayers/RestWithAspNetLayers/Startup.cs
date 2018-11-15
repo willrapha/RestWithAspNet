@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RestWithAspNetLayers.Business;
+using RestWithAspNetLayers.Business.Implementations;
 using RestWithAspNetLayers.Model.Context;
-using RestWithAspNetLayers.Services;
-using RestWithAspNetLayers.Services.Implementations;
+using RestWithAspNetLayers.Repository;
+using RestWithAspNetLayers.Repository.Implementations;
 
 namespace RestWithAspNetLayers
 {
@@ -31,7 +33,8 @@ namespace RestWithAspNetLayers
             services.AddApiVersioning(); // Pacote de versionamento da nossa API
 
             // Injeções de dependencias
-            services.AddScoped<IPersonService, PersonServiceImpl>();
+            services.AddScoped<IPersonBusiness, PersonBusinessImpl>();
+            services.AddScoped<IPersonRepository, PersonRepositoryImpl>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

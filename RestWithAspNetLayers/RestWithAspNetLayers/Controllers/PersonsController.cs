@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RestWithAspNetLayers.Business;
 using RestWithAspNetLayers.Model;
-using RestWithAspNetLayers.Services.Implementations;
 
 namespace RestWithAspNetLayers.Controllers
 {
@@ -13,13 +13,13 @@ namespace RestWithAspNetLayers.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     public class PersonsController : Controller
     {
-        private IPersonService _personService;
+        private readonly IPersonBusiness _personBusiness;
 
         /* Injeção de uma instancia de IPersonService ao criar
         uma instancia de PersonController */
-        public PersonsController(IPersonService personService)
+        public PersonsController(IPersonBusiness personBusiness)
         {
-            _personService = personService;
+            _personBusiness = personBusiness;
         }
 
         //Mapeia as requisições GET para http://localhost:{porta}/api/person/
@@ -27,7 +27,7 @@ namespace RestWithAspNetLayers.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_personService.FindAll());
+            return Ok(_personBusiness.FindAll());
         }
 
         //Mapeia as requisições GET para http://localhost:{porta}/api/person/{id}
@@ -36,7 +36,7 @@ namespace RestWithAspNetLayers.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(long id)
         {
-            var person = _personService.FindById(id);
+            var person = _personBusiness.FindById(id);
             if (person == null) return NotFound();
 
             return Ok(person);
@@ -47,7 +47,7 @@ namespace RestWithAspNetLayers.Controllers
         public IActionResult Post([FromBody]Person person)
         {
             if (person == null) return BadRequest();
-            return new ObjectResult(_personService.Create(person));
+            return new ObjectResult(_personBusiness.Create(person));
         }
 
         // PUT api/values/5
@@ -55,16 +55,16 @@ namespace RestWithAspNetLayers.Controllers
         public IActionResult Put([FromBody]Person person)
         {
             if (person == null) return BadRequest();
-            return new ObjectResult(_personService.Update(person));
+            return new ObjectResult(_personBusiness.Update(person));
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var person = _personService.FindById(id);
+            var person = _personBusiness.FindById(id);
             if (person == null) return NotFound();
-            _personService.Delete(id);
+            _personBusiness.Delete(id);
 
             return NoContent(); // 204 Na tela
         }
