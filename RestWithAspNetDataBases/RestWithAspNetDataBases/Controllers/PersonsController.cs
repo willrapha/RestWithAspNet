@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using RestWithAspNetVerbs.Model;
-using RestWithAspNetVerbs.Services.Implementations;
+﻿using Microsoft.AspNetCore.Mvc;
+using RestWithAspNetDataBases.Model;
+using RestWithAspNetDataBases.Services.Implementations;
 
-namespace RestWithAspNetVerbs.Controllers
+namespace RestWithAspNetDataBases.Controllers
 {
     /* Mapeia as requisições de http://localhost:{porta}/api/person/
    Por padrão o ASP.NET Core mapeia todas as classes que extendem Controller
