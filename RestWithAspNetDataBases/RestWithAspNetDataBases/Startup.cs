@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RestWithAspNetDataBases.Model.Context;
 using RestWithAspNetDataBases.Services;
 using RestWithAspNetDataBases.Services.Implementations;
 
@@ -16,16 +18,20 @@ namespace RestWithAspNetDataBases
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Busca string de conexão ao banco
+            var connection = Configuration["MySqlConnection:MySqlConnectionString"];
+
+            // Adicionando serviço ao banco MySql
+            services.AddDbContext<MySqlContext>(options => options.UseMySql(connection));
+
             services.AddMvc();
 
             // Injeções de dependencias
             services.AddScoped<IPersonService, PersonServiceImpl>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

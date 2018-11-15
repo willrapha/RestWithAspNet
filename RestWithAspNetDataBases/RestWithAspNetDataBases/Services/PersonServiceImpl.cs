@@ -1,18 +1,34 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using RestWithAspNetDataBases.Model;
+using RestWithAspNetDataBases.Model.Context;
 using RestWithAspNetDataBases.Services.Implementations;
 
 namespace RestWithAspNetDataBases.Services
 {
     public class PersonServiceImpl : IPersonService
     {
-        // Contador responsavel por gerar o Fake Id já que não estamos acessando a base de dados
-        // volatile - a cada instancia do servidor é zerada a variavel
-        private volatile int count;
+
+        private MySqlContext _context;
+
+        public PersonServiceImpl(MySqlContext context)
+        {
+            _context = context;
+        }
 
         public Person Create(Person person)
         {
+            try
+            {
+                _context.Add(person);
+                _context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
             return person;
         }
 
@@ -53,17 +69,12 @@ namespace RestWithAspNetDataBases.Services
         {
             return new Person
             {
-                Id = IncrementAndGet(),
+                Id = 1,
                 FirstName = "Person Name" + i,
                 LastName = "Person Last Name" + i,
                 Address = "Person Adress" + i,
                 Gender = "Person Gender" + i
             };
-        }
-         
-        private long IncrementAndGet()
-        {
-            return Interlocked.Increment(ref count);
         }
     }
 }
