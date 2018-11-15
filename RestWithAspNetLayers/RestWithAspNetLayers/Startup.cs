@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RestWithAspNetDataBases.Model.Context;
-using RestWithAspNetDataBases.Services;
-using RestWithAspNetDataBases.Services.Implementations;
+using RestWithAspNetLayers.Model.Context;
+using RestWithAspNetLayers.Services;
+using RestWithAspNetLayers.Services.Implementations;
 
-namespace RestWithAspNetDataBases
+namespace RestWithAspNetLayers
 {
     public class Startup
     {

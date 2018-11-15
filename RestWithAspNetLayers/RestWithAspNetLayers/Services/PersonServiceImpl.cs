@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using RestWithAspNetDataBases.Model;
-using RestWithAspNetDataBases.Model.Context;
-using RestWithAspNetDataBases.Services.Implementations;
+using RestWithAspNetLayers.Model;
+using RestWithAspNetLayers.Model.Context;
+using RestWithAspNetLayers.Services.Implementations;
 
-namespace RestWithAspNetDataBases.Services
+namespace RestWithAspNetLayers.Services
 {
     public class PersonServiceImpl : IPersonService
     {

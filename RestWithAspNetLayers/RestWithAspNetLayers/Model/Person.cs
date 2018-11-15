@@ -1,4 +1,4 @@
-﻿namespace RestWithAspNetDataBases.Model
+﻿namespace RestWithAspNetLayers.Model
 {
     public class Person
     {
