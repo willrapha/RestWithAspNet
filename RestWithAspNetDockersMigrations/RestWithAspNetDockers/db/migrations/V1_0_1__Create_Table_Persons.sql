@@ -1,3 +1,5 @@
+use rest_udemy;
+
 CREATE TABLE `persons` (
 	`Id` int(10) UNSIGNED NULL DEFAULT NULL,
 	`FirstName` VARCHAR(50) NULL DEFAULT NULL,

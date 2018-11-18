@@ -1,3 +1,5 @@
+use rest_udemy;
+
 CREATE TABLE `books` (
   `id` INT(10) AUTO_INCREMENT PRIMARY KEY,
   `Author` longtext,

@@ -1,3 +1,5 @@
+use rest_udemy;
+
 CREATE TABLE IF NOT EXISTS `books` (
   `id` varchar(127) NOT NULL,
   `Author` longtext,
