@@ -1,7 +1,9 @@
-﻿using RestWithAspNetDockers.Model.Base;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using RestWithAspNetDockers.Model.Base;
 
 namespace RestWithAspNetDockers.Model
 {
+    [Table("persons")]
     public class Person: BaseEntity
     {
         public string FirstName { get; set; }
